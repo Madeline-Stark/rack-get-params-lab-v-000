@@ -20,9 +20,9 @@ class Application
 
     #search_word = req.params["q"]
 
-      if @@items.include?(/cart/)
+      if req.path.match(/cart/)
         @@cart << self
-      elsif !@@cart.empty?
+      elsif !req.path.match(/cart/)
         @@items.each do |item|
           resp.write "#{item}\n"
         end
