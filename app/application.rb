@@ -22,7 +22,7 @@ class Application
 
       if @@items.include?(/cart/)
         @@cart << self
-      elsif @@cart.!empty?
+      elsif !@@cart.empty?
         @@items.each do |item|
           resp.write "#{item}\n"
         end
