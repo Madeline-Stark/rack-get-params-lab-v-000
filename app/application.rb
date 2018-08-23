@@ -6,6 +6,7 @@ class Application
   def call(env)
     resp = Rack::Response.new
     req = Rack::Request.new(env)
+    #here we can write if else statement checking to see what path is being passed in...all of this needs to be in call method
 
     if req.path.match(/items/)
       @@items.each do |item|
