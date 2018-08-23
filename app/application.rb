@@ -18,10 +18,10 @@ class Application
       resp.write "Path Not Found"
     end
 
-    search_word = req.params["q"]
+    #search_word = req.params["q"]
 
-      if @@items.include?(search_word)
-        @@cart << search_word
+      if @@items.include?(/cart/)
+        @@cart << self
       elsif @@cart.!empty?
         @@items.each do |item|
           resp.write "#{item}\n"
